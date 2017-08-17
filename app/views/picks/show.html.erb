@@ -3,13 +3,13 @@
     <div class="col-md-5 col-md-offset-3">
       <div class="thumbnail" >
 
-        <% if @product.video_id? %>
-        <iframe class="col-md-12" height="100%" src="https://www.youtube.com/embed/<%= @product.video_id %>" frameborder="0" allowfullscreen></iframe>
+        <% if @pick.video_url? %>
+        <iframe class="col-md-12" height="100%" src="https://www.youtube.com/embed/<%= @pick.video_url %>" frameborder="0" allowfullscreen></iframe>
      　　<% else %>
-          <a href="<%= @product.url %>">
-            <div class="img-responsive" style="background-image: url(<%= @product.image_url %>);"></div>
+          <a href="<%= @pick.url %>">
+            <div class="img-responsive" style="background-image: url(<%= @pick.image_url %>);"></div>
             <div class="caption-full">
-              <h4><%= @product.title %></h4>
+              <h4><%= @pick.title %></h4>
             </div>
           </a>
         <% end %>
@@ -24,7 +24,7 @@
                   <div class="nickname" style="overflow: initial;"><strong><%= current_user.nickname %></strong></div>
                   </div>
                 </header>
-                  <%= form_tag("/products/#{@product.id}/comments", method: :post) do %>
+                  <%= form_tag("/picks/#{@pick.id}/comments", method: :post) do %>
                     <textarea cols="30" name="comment" placeholder="コメントする" rows="2"></textarea>
                     <input type="submit" value="SEND">
                   <% end %>
