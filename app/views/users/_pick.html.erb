@@ -1,0 +1,24 @@
+<div class="col-md-3 col-sm-6 hero-feature">
+  <div class="thumbnail">
+    <a href="<%= product.url %>">
+      <img src="<%= product.image_url %>" alt="">
+      </a>
+      <div class="caption">
+          <a href="/products/<%= product.id %>"><h3><%= truncate(product.title, :length => 40 ) %></h3></a>
+          <div class="user-comment">
+            <div class="profile">
+              <img src="https://pbs.twimg.com/profile_images/857938333145616384/4NSssIhj_400x400.jpg" alt="sky-hi">
+              <div class="details">
+                <div class="nickname" style="overflow: initial;"><%= current_user.nickname %>
+                </div>
+                <div class="job" style="overflow: initial;"><%= current_user.job %>
+                </div>
+              </div>
+            </div>
+            <div class="comment" style="overflow: initial;">
+              サンプル
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
