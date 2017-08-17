@@ -1,0 +1,23 @@
+<div class="container" >
+<header class="image-bg-fluid-height" src="<%= @header_image %>">
+  <a href="/users/edit">
+   <img src="<%= @user_image %>" alt="ユーザーイメージ">
+  </a>
+　　<%= render 'follow_form' %>
+　　<h4><%= render 'stats' %></h4>
+</header>
+<div class="main-body">
+<div class="col-md-5 col-md-offset-4">
+  <h3><%= @nickname %>さんの投稿一覧</h3>
+</div>
+
+<br>
+<br>
+<br>
+    <div class="row text-center">
+      <% @picks.each do |pick| %>
+        <%= render partial: "pick", locals: {pick:pick} %>
+      <% end %>
+    </div>
+  </div>
+</div>

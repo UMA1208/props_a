@@ -45,7 +45,7 @@ group :development do
   gem 'spring'
 end
 
-gem 'device'
+gem 'devise'
 gem 'mechanize'
 gem 'acts-as-taggable-on'
 gem 'ransack'
