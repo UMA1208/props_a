@@ -1,18 +1,18 @@
 <div class="contents row">
   <div class="main-body">
     <div class="container">
-      <%= form_for(@product) do |f| %>
+      <%= form_for(@pick) do |f| %>
         <div class="col-md-5 col-md-offset-3">
           <h3>投稿する</h3>
         </div>
         <div class="col-md-5 col-md-offset-3">
-          <%= f.label :product, "Page URL" %>
+          <%= f.label :pick, "Page URL" %>
           <%= f.text_field :url, class: "form-control" %>
         </div>
 
         <div class="col-md-5 col-md-offset-3">
-          <%= f.label :product, :tag_list %>
-          <%= f.text_field :tag_list, value: @product.tag_list.join(','), class: "form-control" %>
+          <%= f.label :pick, :tag_list %>
+          <%= f.text_field :tag_list, value: @pick.tag_list.join(','), class: "form-control" %>
         </div>
 
         <div class="col-md-5 col-md-offset-3">

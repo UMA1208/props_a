@@ -1,0 +1,21 @@
+/* 検索ボックス */
+dl.searchbox{
+  height: 25px;
+}
+dl.searchbox dt{
+  padding:3px;
+}
+dl.searchbox dt input{
+  width:100%;
+  background:none;
+  background-color: white;
+  border:none;
+}
+dl.searchbox dd{
+  position:absolute;
+  top:1px;
+  right:1px;
+  width:30%;
+  text-align: center;
+  vertical-align: middle;
+}
