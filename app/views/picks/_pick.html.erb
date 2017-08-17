@@ -1,0 +1,29 @@
+<% unless pick.project_path? %>
+<div class="col-md-3 col-sm-6 col-long-6 hero-feature">
+  <div class="thumbnail">
+      <a href="<%= pick.url %>">
+        <img src="<%= pick.image_url %>" alt="">
+      </a>
+      <div class="caption">
+        <a href="/picks/<%= pick.id %>"><h3><%= truncate(pick.title, :length => 40 ) %></h3></a>
+        <% if current_user %>
+          <div class="user-comment">
+            <div class="profile">
+              <img src="<%= current_user.icon_image %>" alt="ユーザー画像">
+              <div class="details">
+                <div class="nickname" style="overflow: initial;"><%= current_user.nickname %>
+                </div>
+                <div class="job" style="overflow: initial;">
+                  <%= current_user.job %>
+                </div>
+              </div>
+            </div>
+            <div class="comment" style="overflow: initial;">
+              サンプル
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>
+<% end %>

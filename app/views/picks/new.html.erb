@@ -1,0 +1,26 @@
+<div class="contents row">
+  <div class="main-body">
+    <div class="container">
+      <%= form_for(@product) do |f| %>
+        <div class="col-md-5 col-md-offset-3">
+          <h3>投稿する</h3>
+        </div>
+        <div class="col-md-5 col-md-offset-3">
+          <%= f.label :product, "Page URL" %>
+          <%= f.text_field :url, class: "form-control" %>
+        </div>
+
+        <div class="col-md-5 col-md-offset-3">
+          <%= f.label :product, :tag_list %>
+          <%= f.text_field :tag_list, value: @product.tag_list.join(','), class: "form-control" %>
+        </div>
+
+        <div class="col-md-5 col-md-offset-3">
+          <%= button_tag type: "submit", class: "btn btn-info" do %>
+            投稿する
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

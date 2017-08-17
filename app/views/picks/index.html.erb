@@ -1,0 +1,107 @@
+<!-- Page Content -->
+<div class="container">
+  <div class="main-body">
+        <!-- Heading Row -->
+        <div class="row">
+            <div class="col-md-8">
+              <div class="box">
+                <div class="col-lg-12 text-center">
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                              <a href="http://kai-you.net/article/43161">
+                                <img class="img-responsive img-full" src="http://kai-you.net/r/img/a/c672x416/sky-hi_youtube_YouTube_10Mbps.mp4_000027928.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="item">
+                              <a href="http://kai-you.net/article/42778">
+                                <img class="img-responsive img-full" src="http://kai-you.net/images/a/2017/06/c672x416/e43df3182f5b80f43a5b1ff7939d3c0b.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="item">
+                              <a href="http://kai-you.net/article/38176">
+                                <img class="img-responsive img-full" src="http://kai-you.net/images/a/2017/02/c672x416/0f268d08ef2452cb52b95beefbad5029.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- /.col-md-8 -->
+            <% if user_signed_in? %>
+            <% else %>
+            <div class="col-md-4">
+                <h1>音楽に自由を</h1>
+                <p>
+                    <br>
+                    <br>
+                    Propsはユーザー主体の音楽プラットフォームです。あなたの好きなアーティストを応援してみませんか？
+                    <br>
+                    <br>
+                    <br>
+                </p>
+                <a class="btn btn-primary btn-lg" href="<%= new_user_registration_path %>">propsを始める！</a>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        <hr>
+       <% end %>
+
+        <!-- Call to Action Well -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center">
+                    Propsをフォローして最新情報をCheck！
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+
+        <!-- Content Row -->
+
+        <!-- /.row -->
+
+        <!-- Page Features -->
+          <div class="row">
+            <div class="col-lg-12">
+                <h3>Latest Projects</h3>
+            </div>
+          </div>
+          <div class="row text-center">
+            <% @picks.each do |pick| %>
+                <%= render partial: "project", locals: {pick:pick} %>
+            <% end %>
+          </div>
+        
+          <div class="row">
+            <div class="col-lg-12">
+                <h3>Latest Articles</h3>
+            </div>
+          </div>
+          <div class="row text-center">
+            <% @articles.each do |pick| %>
+              <%= render partial: "pick", locals: {pick:pick} %>
+            <% end %>
+          </div>
+</div>
