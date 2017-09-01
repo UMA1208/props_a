@@ -1,5 +1,5 @@
 <% unless pick.project_url? %>
-<div class="col-md-3 col-sm-6 col-lg-3">
+<div class="col-sm-6 col-md-3 col-lg-3">
   <div class="pick" style="border-radius: 5px;" >
       <a href="<%= pick.url %>">
         <img src="<%= pick.image_url %>" alt="" >
@@ -13,18 +13,18 @@
         </div>
         <br>
         <% if current_user %>
-          <div class="user-comment">
-            <div class="profile">
-              <img src="<%= current_user.icon_image %>" alt="ユーザー画像">
+          <div class="user-comment" style="padding-bottom: 30px;">
+            <div class="profile" >
+              <img src="<%= current_user.icon_image %>" alt="ユーザー画像" style="margin-left: 20px;">
               <div class="details">
-                <div class="nickname" style="overflow: initial;"><%= current_user.nickname %>
+                <div class="nickname" style="margin-right: 150px;" ><%= current_user.nickname %>
                 </div>
                 <div class="job" style="overflow: initial;">
                   <%= current_user.job %>
                 </div>
               </div>
             </div>
-            <div class="comment" style="overflow: initial;">
+            <div class="comment_pick" style="overflow: initial;">
               サンプル
             </div>
           </div>
