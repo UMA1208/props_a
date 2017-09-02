@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170818080358) do
+ActiveRecord::Schema.define(version: 20170902064237) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "comment",    limit: 65535
@@ -22,14 +22,15 @@ ActiveRecord::Schema.define(version: 20170818080358) do
   end
 
   create_table "picks", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "image_url",   limit: 65535
-    t.integer  "user_id",     limit: 4
-    t.text     "url",         limit: 65535
-    t.text     "video_url",   limit: 65535
-    t.text     "project_url", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "title",          limit: 255
+    t.text     "image_url",      limit: 65535
+    t.integer  "user_id",        limit: 4
+    t.text     "url",            limit: 65535
+    t.text     "video_url",      limit: 65535
+    t.text     "project_url",    limit: 65535
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "poster_comment", limit: 255
   end
 
   create_table "relationships", force: :cascade do |t|
