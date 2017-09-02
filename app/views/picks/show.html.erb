@@ -10,24 +10,6 @@
       <% end %>
         <h3 style="text-align: center;" ><%= @pick.title %></h3>
 
-      <% if current_user %>
-        <div class="posting_form">
-          <header class="profile">
-            <img src="<%= current_user.icon_image %>" alt="ユーザー画像">
-          </header>
-          <%= form_tag("/picks/#{@pick.id}/comments", method: :post) do %>
-            <textarea name="comment" placeholder="コメントする"></textarea>
-            <input type="submit" value="SEND" >
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="comment_list">
-      <div class="row">
-        <div class="col-lg-12">
-          <h3>Comments</h3>
-        </div>
       </div>
       <% if @comments %>
         <% @comments.each do |comment| %>

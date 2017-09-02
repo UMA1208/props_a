@@ -26,18 +26,18 @@ class PicksController < ApplicationController
     # KAI-YOU
     if page.at('.m-article-main img')
       image_url = page.at('.m-article-main img')[:src]
-      pick = Pick.new(title: title, image_url: image_url, user_id: current_user.id, url: params[:url], url: params[:pick].require(:url), tag_list: params[:pick].require(:tag_list))
+      pick = Pick.new(title: title, image_url: image_url, user_id: current_user.id, url: params[:url], url: params[:pick].require(:url), tag_list: params[:pick].require(:tag_list), poster_comment: params[:pick].require(:poster_comment))
     # YOUTUBE
     elsif page.at('meta[itemprop="videoId"]')
       video_url = page.at('meta[itemprop="videoId"]')[:content]
       image_url = "http://i.ytimg.com/vi/#{video_url}/mqdefault.jpg"
 
-      pick = Pick.new(title: title, image_url: image_url, user_id: current_user.id, url: params[:url], url: params[:pick].require(:url), tag_list: params[:pick].require(:tag_list), video_url: video_url)
+      pick = Pick.new(title: title, image_url: image_url, user_id: current_user.id, url: params[:url], url: params[:pick].require(:url), tag_list: params[:pick].require(:tag_list), video_url: video_url, poster_comment: params[:pick].require(:poster_comment))
       # CAMPFIRE
     elsif page.at('.thumbnail-in img')
       image_url = page.at('.thumbnail-in img')[:src]
       project_url = page.at('.embed-popup-iframe iframe')[:src]
-      pick = Pick.new(title: title, image_url: image_url, user_id: current_user.id, url: params[:url], url: params[:pick].require(:url), tag_list: params[:pick].require(:tag_list), project_url: project_url)
+      pick = Pick.new(title: title, image_url: image_url, user_id: current_user.id, url: params[:url], url: params[:pick].require(:url), tag_list: params[:pick].require(:tag_list), project_url: project_url, poster_comment: params[:pick].require(:poster_comment))
     else
       redirect_to root_path
     end
