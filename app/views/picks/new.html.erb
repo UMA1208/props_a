@@ -16,6 +16,11 @@
         </div>
 
         <div class="col-md-5 col-md-offset-3">
+          <%= f.label :pick, "投稿者のコメント" %>
+          <%= f.text_field :poster_comment, class: "form-control" %>
+        </div>
+
+        <div class="col-md-5 col-md-offset-3">
           <%= button_tag type: "submit", class: "btn btn-info" do %>
             投稿する
           <% end %>
