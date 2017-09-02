@@ -1594,7 +1594,7 @@ pre code {
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 484px;
   }
 }
 @media (min-width: 992px) {
@@ -4594,8 +4594,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
-  border-color: #080808;
+  background-color: #77F9C3;
+  border-color: #77F9C3;
 }
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;
@@ -6237,6 +6237,7 @@ button.close {
 }
 .carousel {
   position: relative;
+  width: 484px;
 }
 .carousel-inner {
   position: relative;
@@ -6760,4 +6761,39 @@ button.close {
 
 .main-body {
   margin-top: 20px;
+}
+
+
+.item.active {
+  height: 300px;
+  width: 484px;
+}
+
+.pick {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 345px;
+  width: 245px;
+  background-color: #F5F5F5;
+  border: 0;
+}
+
+.pick a > img {
+  width: 243px;
+  height: 162px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.title {
+  width: 243px;
+  height: 90px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.show {
+  width: 560px;
+  background-color: #F5F5F5;
+  margin: 0 auto;
 }

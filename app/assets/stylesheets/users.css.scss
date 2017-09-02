@@ -49,7 +49,7 @@ div.contents.row {
     background-size: cover;
     background-position: center center;
     border-radius: 3px;
-    box-shadow: 0 0 10px rgba(black,0.2);
+    box-shadow: 0 0 10px rgba(#7FFFD4,0.2);
     &:after {
       content: '';
       position: absolute;
@@ -92,7 +92,7 @@ div.contents.row {
             display: block;
             padding: 5px;
             &:hover {
-              background-color: black;
+              background-color: #7FFFD4;
               color: #fff;
             }
           }
@@ -108,7 +108,7 @@ form {
     text-align: center;
     font-weight: normal;
     font-size: 20px;
-    color: black;
+    color: #7FFFD4;
   }
   input,textarea {
     width: 100%;
@@ -119,13 +119,13 @@ form {
   }
   input[type="submit"] {
     @extend .transition;
-    background-color: black;
+    background-color: #7FFFD4;
     border-radius: 20px;
     color: #fff;
     border: 0;
     font-size: 18px;
     &:hover {
-      background-color: lighten(black, 10%);
+      background-color: lighten(#7FFFD4, 10%);
     }
   }
 }

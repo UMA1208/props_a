@@ -1,19 +1,31 @@
-
   .posting_form {
-    margin-top: 20px;
+    padding-left: 20px;
     form {
       textarea {
         border: 0;
-        font-size: 1.4em;
-        width: 70%;
-        line-height: 40px;
+        font-size: 10px;
+        width: 350px;
+        height: 32px;
         margin-top: 5px;
+        margin-right: 20px;
+        margin-bottom: -2px;
       }
 
       input[type="submit"] {
-        width: 18%;
-        position: relative;
-        top: -5px;
+        width: 100px;
+        height: 32px;
       }
     }
   }
+
+.comment {
+  width: 243px;
+  height: 275px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.comment_list {
+  width:100%;
+  height: 100%;
+}
