@@ -10,6 +10,11 @@
       <% end %>
         <h3 style="text-align: center;" ><%= @pick.title %></h3>
 
+        <h5 style="margin-left: 20px;"><<span><%= @pick.user.nickname %></span> さんのコメント></h5>
+        <div style="margin-left: 20px;">
+          <%= @pick.poster_comment %>
+        </div>
+
       <% if current_user.id != @pick.user_id %>
         <div class="posting_form">
           <header class="profile">
