@@ -3,14 +3,14 @@
     <div class="show" style="border-radius: 5px;" >
       <% if @pick.video_url? %>
         <iframe width="560" height="315" style="border-radius: 5px;" src="https://www.youtube.com/embed/<%= @pick.video_url %>" frameborder="0" allowfullscreen></iframe>
-   　　<% else %>
+      <% else %>
         <a href="<%= @pick.url %>">
           <div class="img-responsive" style="background-image: url(<%= @pick.image_url %>);"></div>
         </a>
       <% end %>
         <h3 style="text-align: center;" ><%= @pick.title %></h3>
 
-      <% if current_user %>
+      <% if current_user.id != @pick.user_id %>
         <div class="posting_form">
           <header class="profile">
             <img src="<%= current_user.icon_image %>" alt="ユーザー画像">
