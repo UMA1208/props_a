@@ -155,3 +155,95 @@ form {
 .registrarion_wrapper{
   padding: 0 350px;
 }
+
+.image-bg-fluid-height {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px whitesmoke;
+
+  .user-image {
+    margin: auto;
+    display: block;
+  }
+
+  .user-name {
+    display: inline-block;
+
+    .edit-profile {
+      margin: 20px 10px 10px 0;
+      float: left;
+      text-align: center;
+    }
+
+    h3 {
+      display: inline-block;
+      float: left;
+      text-align: center;
+    }
+  }
+
+  .user-stats {
+    clear: both;
+    text-align: center;
+
+    .follow-design {
+
+    }
+
+    .favorite-artists {
+      display: inline-block;
+      text-align: center;
+
+      .favorite-artists-name {
+        float: left;
+        margin: 20px 10px;
+        padding: 10px;
+        border: 1px solid #66757f;
+        color: #66757f;
+        border-radius: 100px;
+
+        &:hover {
+          cursor: pointer;
+          background-color: #eeeeee;
+        }
+      }
+    }
+  }
+}
+
+.main-body {
+  .user-project-title {
+    padding: 0.5em;
+    color: #494949;
+    background: #fffaf4;
+    border-left: 5px solid #ffaf58;
+    text-align: center;
+  }
+
+  .user-project {
+    padding: 50px 0;
+    margin: 50px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px whitesmoke;
+  }
+
+  .user-pick-title {
+    padding: 0.5em;
+    color: #494949;
+    background: #fffaf4;
+    border-left: 5px solid #ffaf58;
+    text-align: center;
+  }
+
+  .user-pick {
+    padding: 50px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px whitesmoke;
+
+    .user_page {
+      .comment {
+        height: auto;
+      }
+    }
+  }
+
+}

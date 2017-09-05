@@ -1,32 +1,38 @@
 <div class="container" >
-<header class="image-bg-fluid-height" src="<%= @header_image %>">
-  <a href="/users/edit">
-   <img src="<%= @user_image %>" alt="ユーザーイメージ">
-  </a>
-　　<%= render 'follow_form' %>
-　　<h4><%= render 'status' %></h4>
-</header>
-<div class="main-body">
-  <div class="col-md-5 col-md-offset-4">
-    <h3><%= @nickname %>さんのプロジェクト一覧</h3>
-  </div>
-  <br>
-  <br>
-  <br>
-  <div class="row text-center">
-    <% @picks.each do |pick| %>
+  <header class="image-bg-fluid-height" src="<%= @header_image %>">
+    <img class="user-image" src="<%= @user_image %>" alt="ユーザーイメージ" style="border-radius: 10px;">
+    <div class="user-name">
+      <a class="edit-profile" href="/users/edit">
+        <!--icon画像要変更-->
+        <img src="http://icooon-mono.com/i/icon_10194/icon_101940.svg" width="20" height="20">
+      </a>
+      <h3><%= @nickname %></h3>
+    </div>
+    <%= render 'follow_form' %>
+    <h4 class="user-stats"><%= render 'stats' %></h4>
+  </header>
+
+  <div class="main-body">
+    <div class="col-md-5 col-md-offset-4 user-project-title">
+      <h3><%= @nickname %>さんのプロジェクト一覧</h3>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row text-center user-project">
+      <% @picks.each do |pick| %>
         <%= render partial: "project", locals: {pick:pick} %>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 
-<div class="col-md-5 col-md-offset-4">
-  <h3><%= @nickname %>さんの投稿一覧</h3>
-</div>
+    <div class="col-md-5 col-md-offset-4 user-pick-title">
+      <h3><%= @nickname %>さんの投稿一覧</h3>
+    </div>
+    <br>
+    <br>
+    <br>
 
-<br>
-<br>
-<br>
-    <div class="row text-center">
+    <div class="row text-center user-pick">
       <% @picks.each do |pick| %>
         <%= render partial: "pick", locals: {pick:pick} %>
       <% end %>
