@@ -1,0 +1,31 @@
+ <% @user ||= current_user %>
+<div class="stats">
+  <div class="follow-design">
+    <a href="<%= following_user_path(@user) %>" style="color: gray; text-decoration: none">
+      <strong id="following" class="stat" style="color: black">
+        <%= @user.followings.count %>
+      </strong>
+      フォロー
+    </a>
+    <a href="<%= followers_user_path(@user) %>" style="color: gray; text-decoration: none">
+      <strong id="followers" class="stat" style="color: black">
+        <%= @user.followers.count %>
+      </strong>
+      フォロワー
+    </a>
+  </div>
+  <div class="favorite-artists">
+    <div col-sm-6 col-md-3 col-lg-3>
+      <!-- あとでArtistテーブルからリンク付け -->
+      <!-- **要編集** -->
+      <!-- ************** -->
+      <a href="http://sumika.info/#">
+        <div class="favorite-artists-name">sumika</div>
+      </a>
+      <div class="favorite-artists-name">Mr.children</div>
+      <div class="favorite-artists-name">WEAVER</div>
+      <div class="favorite-artists-name">never young beach</div>
+      <div class="favorite-artists-name">緑黄色社会</div>
+    </div>
+  </div>
+</div>

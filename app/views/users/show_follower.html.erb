@@ -1,0 +1,14 @@
+<div class="follow_list">
+  <% @user.followers.each do |user| %>
+    <div class="col-md-3 col-sm-6 hero-feature">
+      <div class="thumbnail">
+        <a href="<%= user_path(user) %>">
+          <img src="<%= user.icon_image %>" alt="">
+        </a>
+        <div class="caption follow_nickname">
+          <h3><%= user.nickname %></h3>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
