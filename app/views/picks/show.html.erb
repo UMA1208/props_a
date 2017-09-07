@@ -3,14 +3,21 @@
     <div class="show" style="border-radius: 5px;" >
       <% if @pick.video_url? %>
         <iframe width="560" height="315" style="border-radius: 5px;" src="https://www.youtube.com/embed/<%= @pick.video_url %>" frameborder="0" allowfullscreen></iframe>
-   　　<% else %>
+      <% else %>
         <a href="<%= @pick.url %>">
           <div class="img-responsive" style="background-image: url(<%= @pick.image_url %>);"></div>
         </a>
       <% end %>
         <h3 style="text-align: center;" ><%= @pick.title %></h3>
 
-      <% if current_user %>
+        <h5 style="margin-left: 20px;"><<span><%= @pick.user.nickname %></span> さんのコメント></h5>
+        <div style="margin-left: 20px;">
+          <%= @pick.poster_comment %>
+        </div>
+    </div>
+
+    <% if current_user.id != @pick.user_id %>
+      <div class="show" style="border-radius: 5px; margin-top: 10px; padding-top: 12px; padding-bottom: 0;" >
         <div class="posting_form">
           <header class="profile">
             <img src="<%= current_user.icon_image %>" alt="ユーザー画像">
@@ -20,8 +27,9 @@
             <input type="submit" value="SEND" >
           <% end %>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+
 
     <div class="comment_list">
       <div class="row">
