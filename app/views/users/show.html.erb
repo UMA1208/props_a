@@ -1,6 +1,6 @@
 <div class="container" >
   <header class="image-bg-fluid-height" src="<%= @header_image %>">
-    <img class="user-image" src="<%= @user_image %>" alt="ユーザーイメージ" style="border-radius: 10px;">
+    <img class="user-image" src="<%= @user_image %>" alt="ユーザーイメージ" style="border-radius: 10px; height: 200px; width: 200px; ">
     <div class="user-name">
       <a class="edit-profile" href="/users/edit">
         <!--icon画像要変更-->
@@ -13,7 +13,6 @@
   </header>
 
   <div class="main-body">
-    <div class="col-md-5 col-md-offset-4 user-project-title">
       <h3><%= @nickname %>さんのプロジェクト一覧</h3>
     </div>
     <br>
@@ -37,5 +36,4 @@
         <%= render partial: "pick", locals: {pick:pick} %>
       <% end %>
     </div>
-  </div>
 </div>

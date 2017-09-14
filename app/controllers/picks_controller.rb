@@ -49,4 +49,5 @@ class PicksController < ApplicationController
     @comments = @pick.comments.includes(:user)
   end
 
+
 end
