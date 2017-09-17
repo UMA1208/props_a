@@ -19,10 +19,17 @@
   }
 
 .comment {
-  width: 243px;
-  height: 275px;
+  display: block;
+  width: 450px;
+  height: 50px;
   background-color: white;
-  margin: 0 auto;
+  float: right;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
 }
 
 .comment_list {
