@@ -1,105 +1,64 @@
 <!-- Page Content -->
 <div class="container">
   <div class="main-body">
-    <!-- Heading Row -->
-    <div class="row">
-      <div class="col-lg-12">
-        <h3>Featured Articles</h3>
-      </div>
-      <div class="col-md-8">
-        <div class="box">
-          <div class="col-lg-12 text-center">
-            <div id="carousel-example-generic" class="carousel slide">
-                <!-- Indicators -->
-              <ol class="carousel-indicators hidden-xs">
-                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-              </ol>
 
-                <!-- Wrapper for slides -->
-              <div class="carousel-inner">
-                <div class="item active img-responsive img-full" style="background-image: url(http://kai-you.net/r/img/a/c672x416/sky-hi_youtube_YouTube_10Mbps.mp4_000027928.jpg);">
-                  <a href="http://kai-you.net/article/43161">
-                  </a>
-                </div>
-                <div class="item img-responsive img-full" style="background-image: url(http://kai-you.net/images/a/2017/06/c672x416/e43df3182f5b80f43a5b1ff7939d3c0b.jpg);">
-                  <a href="http://kai-you.net/article/42778"></a>
-                </div>
-                <div class="item img-responsive img-full" style="background-image: url(http://kai-you.net/press/img/BAD-HOP_A.jpg?20170831133134);">
-                  <a href="http://kai-you.net/article/38176"></a>
-                </div>
-            </div>
-
-                <!-- Controls -->
-              <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                <span class="icon-prev"></span>
-              </a>
-              <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                <span class="icon-next"></span>
-              </a>
-            </div>
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active" role="presentation">
+        <a aria-controls="tab_a" data-toggle="tab" href="#tab_a" role="tab"><h3>Latest Articles</h3></a>
+      </li>
+      <li role="presentation">
+        <a aria-controls="tab_b" data-toggle="tab" href="#tab_b" role="tab"><h3>Latest Propjects</h3></a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab_a" role="tabpanel">
+        <div class="row">
+          <div class="row text-center">
+            <% @articles.each do |pick| %>
+              <%= render partial: "pick", locals: {pick:pick} %>
+            <% end %>
           </div>
         </div>
       </div>
-            <!-- /.col-md-8 -->
-    <% if user_signed_in? %>
-    <% else %>
-      <div class="col-md-4">
-        <h1>音楽に自由を</h1>
+      <div class="tab-pane" id="tab_b" role="tabpanel">
+        <div class="row">
+          <div class="row text-center">
+            <% @picks.each do |pick| %>
+              <%= render partial: "project", locals: {pick:pick} %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active" role="presentation">
+        <a aria-controls="tab_c" data-toggle="tab" href="#tab_c" role="tab"><h3>Top Songs</h3></a>
+      </li>
+      <li role="presentation">
+        <a aria-controls="tab_d" data-toggle="tab" href="#tab_d" role="tab"><h3>Top Artists</h3></a>
+      </li>
+      <li role="presentation">
+        <a aria-controls="tab_e" data-toggle="tab" href="#tab_e" role="tab"><h3>Top Lyrics</h3></a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab_c" role="tabpanel">
+        <%= render partial: "song" %>
+      </div>
+      <div class="tab-pane" id="tab_d" role="tabpanel">
         <p>
-            <br>
-            <br>
-            Propsはユーザー主体の音楽プラットフォームです。あなたの好きなアーティストを応援してみませんか？
-            <br>
-            <br>
-            <br>
+        <%= render partial: "artist" %>
         </p>
-        <a class="btn btn-primary btn-lg" href="<%= new_user_registration_path %>">propsを始める！</a>
       </div>
-    <!-- /.col-md-4 -->
-    </div>
-<!-- /.row -->
-
-    <hr>
-  <% end %>
-
-        <!-- Call to Action Well -->
-  <div class="row">
-    <div class="col-md-12 col-lg-12">
-      <div class="well text-center">
-          Propsをフォローして最新情報をCheck！
+      <div class="tab-pane" id="tab_e" role="tabpanel">
+        <p>
+        <%= render partial: "lyric" %>
+        </p>
       </div>
     </div>
-      <!-- /.col-lg-12 -->
-  </div>
-        <!-- /.row -->
 
 
-        <!-- Content Row -->
-
-        <!-- /.row -->
-
-        <!-- Page Features -->
-  <div class="row">
-    <div class="col-lg-12">
-      <h3>Latest Projects</h3>
-    </div>
-    <div class="row text-center">
-      <% @picks.each do |pick| %>
-          <%= render partial: "project", locals: {pick:pick} %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-12">
-      <h3>Latest Articles</h3>
-    </div>
-    <div class="row text-center">
-      <% @articles.each do |pick| %>
-        <%= render partial: "pick", locals: {pick:pick} %>
-      <% end %>
-    </div>
-  </div>
 </div>

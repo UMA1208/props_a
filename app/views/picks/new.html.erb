@@ -5,19 +5,20 @@
         <div class="col-md-5 col-md-offset-3">
           <h3>投稿する</h3>
         </div>
+
         <div class="col-md-5 col-md-offset-3">
-          <%= f.label :pick, "Page URL" %>
+          <%= f.label :pick, "URL" %>
           <%= f.text_field :url, class: "form-control" %>
         </div>
 
         <div class="col-md-5 col-md-offset-3">
-          <%= f.label :pick, :tag_list %>
-          <%= f.text_field :tag_list, value: @pick.tag_list.join(','), class: "form-control" %>
+          <%= f.label :pick, "コメント" %>
+          <%= f.text_field :poster_comment, class: "form-control" %>
         </div>
 
         <div class="col-md-5 col-md-offset-3">
-          <%= f.label :pick, "投稿者のコメント" %>
-          <%= f.text_field :poster_comment, class: "form-control" %>
+          <%= f.label :pick, "タグ" %>
+          <%= f.text_field :tag_list, value: @pick.tag_list.join(','), class: "form-control" %>
         </div>
 
         <div class="col-md-5 col-md-offset-3">

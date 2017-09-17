@@ -1,9 +1,10 @@
 class PicksController < ApplicationController
 
   def index
-    @picks = Pick.includes(:user)
+    @picks = Pick.includes(:user).page(params[:page]).per(12).order("created_at DESC")
     @q = Pick.ransack(params[:q])
-    @articles = @q.result(distinct: true)
+    @articles = @q.result(distinct: true).page(params[:page]).per(7).order("created_at DESC")
+    @songs
   end
 
   def user_params
