@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
 
  has_many :followers, through: :follower_relationships
 
+ has_many :favortite_artists, class_name: "Favorite", foreign_key:  "user_id", dependent: :destroy
+
+ has_many :artists, through: :favortite_artists
+
  def following?(other_user)
     following_relationships.find_by(following_id: other_user.id)
   end
