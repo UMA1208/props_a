@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @picks= @user.picks
     @user_image = @user.icon_image
     @header_image = @user.header
+    @favorite_artists = @user.artists
   end
 
   def following

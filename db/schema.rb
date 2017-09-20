@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170902064237) do
+ActiveRecord::Schema.define(version: 20170917070816) do
+
+  create_table "artists", force: :cascade do |t|
+    t.string   "artist_name", limit: 255
+    t.text     "artist_url",  limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text     "comment",    limit: 65535
@@ -20,6 +27,16 @@ ActiveRecord::Schema.define(version: 20170902064237) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4, null: false
+    t.integer  "artist_id",  limit: 4, null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "favorites", ["artist_id"], name: "fk_rails_b3932a748c", using: :btree
+  add_index "favorites", ["user_id"], name: "fk_rails_d15744e438", using: :btree
 
   create_table "picks", force: :cascade do |t|
     t.string   "title",          limit: 255
@@ -93,4 +110,6 @@ ActiveRecord::Schema.define(version: 20170902064237) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "favorites", "artists"
+  add_foreign_key "favorites", "users"
 end
