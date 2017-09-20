@@ -19,13 +19,12 @@
       <!-- あとでArtistテーブルからリンク付け -->
       <!-- **要編集** -->
       <!-- ************** -->
-      <a href="http://sumika.info/#">
-        <div class="favorite-artists-name">sumika</div>
-      </a>
-      <div class="favorite-artists-name">Mr.children</div>
-      <div class="favorite-artists-name">WEAVER</div>
-      <div class="favorite-artists-name">never young beach</div>
-      <div class="favorite-artists-name">緑黄色社会</div>
+      <% @favorite_artists.each do |artist| %>
+        <!-- <a href="<%= artist.artist_url %>"> -->
+        <a href="<%= artist_path(artist) %>">
+          <div class="favorite-artists-name"><%= artist.artist_name %></div>
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
