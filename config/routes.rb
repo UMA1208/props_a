@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
+  resources :artists, only: [:show]
+
   root 'picks#index'
 end
