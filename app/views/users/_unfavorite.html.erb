@@ -1,0 +1,3 @@
+<%= form_for(current_user.favorite_artists.find_by(artist_id: artist.id), html: { method: :delete }) do |f| %>
+  <%= f.submit "取り消し", class: "unfavorite-btn", style: "margin: auto 0; background-color: #ff7f50;" %>
+<% end %>
