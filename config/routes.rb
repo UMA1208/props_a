@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     member do
      get :following, :followers
     end
+    get :edit_profile
   end
+
   resources :relationships, only: [:create, :destroy]
 
   resources :picks do
@@ -13,6 +15,8 @@ Rails.application.routes.draw do
   end
 
   resources :artists, only: [:show]
+
+  resources :favorites, only: [:create, :destroy]
 
   root 'picks#index'
 end
