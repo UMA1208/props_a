@@ -1,0 +1,38 @@
+<div class="container" >
+  <header class="image-bg-fluid-height" src="<%= @header_image %>">
+    <div class="user-name">
+      <h3>プロフィール編集</h3>
+    </div>
+  </header>
+
+  <div class="main-body">
+
+    <div class="searchbox">
+        <%= search_form_for @q, url: {action: :edit_profile} do |f| %>
+          <dt><%= f.search_field :artist_name_cont, placeholder: 'アーティストを検索' %></dt>
+          <%= f.submit %>
+        <% end %>
+      </div>
+
+      <div class="searched_result">
+        <% @searched_artists.each do |artist| %>
+          <li style = "font-size: 20px; list-style-type: none; display: flex; padding: 10px 0;">
+            <div id="edit_profile_artist" style="margin: auto 0; padding-right: 20px;">
+              <%= artist.artist_name %>
+            </div>
+            <div class="favorite-button" id="edit_profile_favorite" style="float: left; clear: both; margin: auto 0;">
+              <% if current_user.favorite?(artist) %>
+                <%= render 'unfavorite', artist: artist %>
+              <% else %>
+                <%= render 'favorite', artist: artist %>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+      </div>
+    </div>
+    <div style="background-color: antiquewhite; width: 25%; margin: auto;">
+      <a href="<%= user_path(current_user.id) %>" style=" font-size: 20px; text-align: center; display: inherit; cursor: pointer;">完了</a>
+    </div>
+  </div>
+</div>

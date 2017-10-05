@@ -10,15 +10,20 @@ class UsersController < ApplicationController
   end
 
   def following
-      @user  = User.find(params[:id])
-      @users = @user.followings
-      render 'show_follow'
+    @user = User.find(params[:id])
+    @users = @user.followings
+    render 'show_follow'
   end
 
   def followers
-    @user  = User.find(params[:id])
+    @user = User.find(params[:id])
     @users = @user.followers
     render 'show_follower'
+  end
+
+  def edit_profile
+    @q = Artist.ransack(params[:q])
+    @searched_artists = @q.result(distinct: true)
   end
 
 end

@@ -2,14 +2,19 @@
   <header class="image-bg-fluid-height" src="<%= @header_image %>">
     <img class="user-image" src="<%= @user_image %>" alt="ユーザーイメージ" style="border-radius: 10px; height: 200px; width: 200px; ">
     <div class="user-name">
-      <a class="edit-profile" href="/users/edit">
-        <!--icon画像要変更-->
-        <img src="http://icooon-mono.com/i/icon_10194/icon_101940.svg" width="20" height="20">
-      </a>
+      <% if @user.id == current_user.id %>
+        <a class="edit-profile" href="/users/edit">
+          <!--icon画像要変更-->
+          <img src="http://icooon-mono.com/i/icon_10194/icon_101940.svg" width="20" height="20">
+        </a>
+      <% end %>
       <h3><%= @nickname %></h3>
     </div>
     <%= render 'follow_form' %>
     <h4 class="user-stats"><%= render 'stats' %></h4>
+    <% if @user.id == current_user.id %>
+      <a href="<%= user_edit_profile_path(@user) %>">プロフィール編集</a>
+     <% end %>
   </header>
 
   <div class="main-body">

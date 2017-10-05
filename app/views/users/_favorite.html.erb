@@ -1,0 +1,4 @@
+<%= form_for(current_user.favorite_artists.build(artist_id: artist.id)) do |f| %>
+  <div><%= f.hidden_field :artist_id %></div>
+  <%= f.submit "お気に入り登録", class: "favorite-btn", style: "margin: auto 0; background-color: #afeeee;" %>
+<% end %>
